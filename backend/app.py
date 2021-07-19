@@ -9,7 +9,6 @@ from schema import ma
 from dotenv import load_dotenv
 from resources.vacina import VacinaRegister
 
-# teste
 
 app = Flask(__name__)
 load_dotenv()
