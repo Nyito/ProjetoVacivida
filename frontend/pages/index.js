@@ -127,11 +127,17 @@ export default function Form() {
         </div>
 
 
+        <div>
+          <label>
+            Selecionar os campos em caso positivo:
+          </label>
+        </div>
+
 
         <div>
-          <label>CheckBox? </label>
+          <label>Cirrose: </label>
           <Controller
-            name="MyCheckbox"
+            name="cirrose"
             control={control}
             defaultValue={false}
             rules={{ required: true }}
@@ -139,6 +145,198 @@ export default function Form() {
           />
         </div>
 
+
+        <div>
+          <label>Diabetes: </label>
+          <Controller
+            name="diabetes"
+            control={control}
+            defaultValue={false}
+            rules={{ required: true }}
+            render={({ field }) => <Checkbox {...field} />}
+          />
+        </div>
+
+
+        <div>
+          <label>Doença Neurológica: </label>
+          <Controller
+            name="doencaNeurologica"
+            control={control}
+            defaultValue={false}
+            rules={{ required: true }}
+            render={({ field }) => <Checkbox {...field} />}
+          />
+        </div>
+
+
+        <div>
+          <label>Doença Renal: </label>
+          <Controller
+            name="doencaRenal"
+            control={control}
+            defaultValue={false}
+            rules={{ required: true }}
+            render={({ field }) => <Checkbox {...field} />}
+          />
+        </div>
+
+
+        <div>
+          <label>Doença Cardiovascular: </label>
+          <Controller
+            name="doencaCardiovascular"
+            control={control}
+            defaultValue={false}
+            rules={{ required: true }}
+            render={({ field }) => <Checkbox {...field} />}
+          />
+        </div>
+
+
+        <div>
+          <label>Gestante: </label>
+          <Controller
+            name="gestante"
+            control={control}
+            defaultValue={false}
+            rules={{ required: true }}
+            render={({ field }) => <Checkbox {...field} />}
+          />
+        </div>
+
+
+
+        <div>
+          <label>Hemoglobinopatia: </label>
+          <Controller
+            name="hemoglobinopatia"
+            control={control}
+            defaultValue={false}
+            rules={{ required: true }}
+            render={({ field }) => <Checkbox {...field} />}
+          />
+        </div>
+
+
+        <div>
+          <label>Hipertensão: </label>
+          <Controller
+            name="hipertensão"
+            control={control}
+            defaultValue={false}
+            rules={{ required: true }}
+            render={({ field }) => <Checkbox {...field} />}
+          />
+        </div>
+
+
+        <div>
+          <label>Imunossuprimido: </label>
+          <Controller
+            name="imunossuprimido"
+            control={control}
+            defaultValue={false}
+            rules={{ required: true }}
+            render={({ field }) => <Checkbox {...field} />}
+          />
+        </div>
+
+
+        <div>
+          <label>Obesidade Grave: </label>
+          <Controller
+            name="obesidadeGrave"
+            control={control}
+            defaultValue={false}
+            rules={{ required: true }}
+            render={({ field }) => <Checkbox {...field} />}
+          />
+        </div>
+
+
+        <div>
+          <label>Paciente Oncológico: </label>
+          <Controller
+            name="pacienteOncologico"
+            control={control}
+            defaultValue={false}
+            rules={{ required: true }}
+            render={({ field }) => <Checkbox {...field} />}
+          />
+        </div>
+
+
+        <div>
+          <label>HIV: </label>
+          <Controller
+            name="hiv"
+            control={control}
+            defaultValue={false}
+            rules={{ required: true }}
+            render={({ field }) => <Checkbox {...field} />}
+          />
+        </div>
+
+
+        <div>
+          <label>Pneumopatia: </label>
+          <Controller
+            name="pneumopatia"
+            control={control}
+            defaultValue={false}
+            rules={{ required: true }}
+            render={({ field }) => <Checkbox {...field} />}
+          />
+        </div>
+
+
+        <div>
+          <label>Puerpera: </label>
+          <Controller
+            name="puerpera"
+            control={control}
+            defaultValue={false}
+            rules={{ required: true }}
+            render={({ field }) => <Checkbox {...field} />}
+          />
+        </div>
+
+
+        <div>
+          <label>Síndrome de Down: </label>
+          <Controller
+            name="sindromeDown"
+            control={control}
+            defaultValue={false}
+            rules={{ required: true }}
+            render={({ field }) => <Checkbox {...field} />}
+          />
+        </div>
+
+
+        <div>
+          <label>Terapia Renal: </label>
+          <Controller
+            name="terapiaRenal"
+            control={control}
+            defaultValue={false}
+            rules={{ required: true }}
+            render={({ field }) => <Checkbox {...field} />}
+          />
+        </div>
+
+
+        <div>
+          <label>Transplantado: </label>
+          <Controller
+            name="transplantado"
+            control={control}
+            defaultValue={false}
+            rules={{ required: true }}
+            render={({ field }) => <Checkbox {...field} />}
+          />
+        </div>
 
 
         
