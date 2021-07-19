@@ -1,7 +1,10 @@
+import React from "react";
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
-import {useForm, Controller } from "react-hook-form"
+import {useForm, Controller } from "react-hook-form";
+import { TextField, Checkbox } from "@material-ui/core";
+
 
 
 
@@ -125,6 +128,16 @@ export default function Form() {
           </select>
         </div>
 
+
+        <div>
+          <Controller
+            name="MyCheckbox"
+            control={control}
+            defaultValue={false}
+            rules={{ required: true }}
+            render={({ field }) => <Checkbox {...field} />}
+          />
+        </div>
 
 
         
