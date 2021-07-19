@@ -1,8 +1,9 @@
 # ProjetoVacivida
 
+By
 
-teste
-
-teste
-
-testando teste 
+Daniel Hiroki Yamashita
+Eduardo Thomaz Noronha
+José Vitor Martins Makiyama
+Leonardo Ihara Ishicava
+Nicholas Yassuo Ito
