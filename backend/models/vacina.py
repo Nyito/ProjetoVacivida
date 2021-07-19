@@ -4,7 +4,7 @@ from db import db
 class VacinaModel(db.Model):
     __tablename__ = "vacinacao"
     id = db.Column(db.Integer, primary_key=True)
-    cpf = db.Column(db.String(80), nullable=True)
+    cpf = db.Column(db.String(80), nullable=True, unique=True)
     nome = db.Column(db.String(80), nullable=True)
     dataNascimento = db.Column(db.String(80), nullable=True)
     telefone = db.Column(db.String(80), nullable=True)

@@ -19,7 +19,7 @@ const register = async (req, res) => {
               fabricante, 
               dose } = req.body
 
-      /* Caso o usuário ou senha ou email estiverem em branco... */
+      /* Caso os campos obrigatorios estiverem em branco... */
       if (!cpf || !nome || !dataNascimento) {
         return res.status(400).json({
           success: false,
