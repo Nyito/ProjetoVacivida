@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
-import {useForm} from "react-hook-form"
+import {useForm, Controller } from "react-hook-form"
+import { TextField, Checkbox } from "@material-ui/core";
 
 
 
@@ -11,6 +12,9 @@ export default function Form() {
   const { 
     register, handleSubmit} = useForm();
 
+
+  
+  /* funcao para a submissao dos dados */
 
   async function onSubmit(data){
     const registerApi = await fetch(BASE_URL + '/api/vacina', {
@@ -27,14 +31,19 @@ export default function Form() {
     if (result.success) {
       console.log('formulario enviado')
     } else {
-      console.log('erro ao tentar enviar formulario')
+      console.log('erro ao enviar formulario')
     }
   };
+
+
+
+  /* campos a serem preenchidos */
 
   return (
     <Layout home>
    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
+      <div> 
+
 
        <div>
          <label>Nome: </label>
@@ -43,42 +52,56 @@ export default function Form() {
          </input>
        </div>
 
+
+
        <div>
          <label>CPF: </label>
          <input name="cpf"
           {...register("cpf")} required  />
         </div>
       
+
+
        <div>
          <label>Data de Nascimento: </label>
           <input name="dataNascimento"
             {...register("dataNascimento")} required  />
         </div>
       
+
+
         <div>
           <label>Telefone: </label>
           <input name="telefone"
             {...register("telefone")} required  />
         </div>
       
+
+
         <div>
           <label>Endereço: </label>
           <input name="endereco"
             {...register("endereco")} required  />
         </div>
       
+
+
        <div>
           <label>Nome da mãe: </label>
           <input name="nomeMae"
             {...register("nomeMae")} required  />
         </div>
       
+
+
        <div>
           <label>Nome do aplicador: </label>
           <input name="nomeAplicador"
             {...register("nomeAplicador")} required  />
         </div>
       
+
+
        <div>
         <label>Vacina: </label>
          <select name="fabricante"
@@ -88,10 +111,11 @@ export default function Form() {
            <option value="Pfizer">Pfizer</option>
            <option value="Janssen">Janssen</option>
            <option value="CoronaVac">CoronaVac</option>
-           <option value="Calabronks">Calabronks</option>
          </select>
         </div>
       
+
+
         <div>
           <label>Dose </label>
           <select name="dose"
@@ -99,9 +123,22 @@ export default function Form() {
             <option value="Selecionar">Selecionar</option>
             <option value="1">1ª Dose</option>
             <option value="2">2ª Dose</option>
-            <option value="3">?????</option>
           </select>
         </div>
+
+
+
+        <div>
+          <Controller
+            name="MyCheckbox"
+            control={control}
+            defaultValue={false}
+            rules={{ required: true }}
+            render={({ field }) => <Checkbox {...field} />}
+          />
+        </div>
+
+
         
         <input type="file" name="picture"{...register("picture")}  />
         <button>Enviar</button>

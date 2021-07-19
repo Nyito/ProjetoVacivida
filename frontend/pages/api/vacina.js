@@ -9,7 +9,16 @@ const register = async (req, res) => {
 
   switch (method) {
     case 'POST':
-      const { cpf, nome, dataNascimento, telefone, endereco, nomeMae, nomeAplicador, fabricante, dose } = req.body
+      const { cpf, 
+              nome, 
+              dataNascimento, 
+              telefone, 
+              endereco, 
+              nomeMae, 
+              nomeAplicador, 
+              fabricante, 
+              dose } = req.body
+
       /* Caso o usuário ou senha ou email estiverem em branco... */
       if (!cpf || !nome || !dataNascimento) {
         return res.status(400).json({
@@ -17,6 +26,7 @@ const register = async (req, res) => {
           message: 'faltam campos a serem preenchidos',
         })
       }
+      
       try {
         const resposta = await axios.post(`${urlApi}/register`, {
           cpf: cpf,
