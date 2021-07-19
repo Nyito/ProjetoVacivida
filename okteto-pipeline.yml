@@ -1,0 +1,3 @@
+deploy:
+  - okteto build -t okteto.dev/vacivida-backend:latest ./backend
+  - kubectl apply -f k8s

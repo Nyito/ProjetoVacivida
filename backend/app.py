@@ -9,6 +9,8 @@ from schema import ma
 from dotenv import load_dotenv
 from resources.vacina import VacinaRegister
 
+# teste
+
 app = Flask(__name__)
 load_dotenv()
 # app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.db"
