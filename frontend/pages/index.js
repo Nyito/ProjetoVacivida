@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import {useForm, Controller } from "react-hook-form";
+import { TextField, Checkbox } from "@material-ui/core";
 
 
 
@@ -9,8 +10,7 @@ import {useForm, Controller } from "react-hook-form";
 
 export default function Form() {
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
-  const { 
-    register, handleSubmit} = useForm();
+  const { register, handleSubmit, control, reset, } = useForm();
 
 
   
@@ -124,6 +124,19 @@ export default function Form() {
             <option value="1">1ª Dose</option>
             <option value="2">2ª Dose</option>
           </select>
+        </div>
+
+
+
+        <div>
+          <label>CheckBox? </label>
+          <Controller
+            name="MyCheckbox"
+            control={control}
+            defaultValue={false}
+            rules={{ required: true }}
+            render={({ field }) => <Checkbox {...field} />}
+          />
         </div>
 
 
