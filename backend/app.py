@@ -8,7 +8,7 @@ from db import db
 from schema import ma
 from dotenv import load_dotenv
 from resources.vacina import VacinaRegister
-
+from resources.vacina import VacinaFileRegister
 
 app = Flask(__name__)
 load_dotenv()
@@ -38,6 +38,7 @@ jwt = JWTManager(app)
 
 # Endpoints da aplicação
 api.add_resource(VacinaRegister, "/register")
+api.add_resource(VacinaFileRegister, "/uploadFile")
 
 if __name__ == "__main__":
     db.init_app(app)

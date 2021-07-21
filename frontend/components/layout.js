@@ -28,6 +28,7 @@ export default function Layout({ children, home }) {
       <header className={styles.header}>
         {home ? (
           <>
+          <Link href='/'><a>
             <Image
               priority
               src='/logo_vacivida.png'
@@ -35,6 +36,7 @@ export default function Layout({ children, home }) {
               width={800}
               alt={name}
             />
+          </a></Link>
             <h1 className={utilStyles.heading2Xl}>{siteTitle}</h1>
           </>
         ) : (
