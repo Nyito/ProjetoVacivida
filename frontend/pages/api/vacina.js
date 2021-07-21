@@ -9,15 +9,38 @@ const register = async (req, res) => {
 
   switch (method) {
     case 'POST':
-      const { cpf, 
-              nome, 
-              dataNascimento, 
+      const { nome,
+              cpf,  
+              dataNascimento,
+              idade,
+              sexo, 
               telefone, 
               endereco, 
               nomeMae, 
               nomeAplicador, 
               fabricante, 
-              dose } = req.body
+              lote,
+              dose,
+
+              cirrose,
+              diabetes,
+              doencaNeurologica,
+              doencaRenal,
+              doencaCardiovascular,
+              gestante,
+              hemoglobinopatia,
+              hipertensao,
+              imunossuprimido,
+              obesidadeGrave,
+              pacienteOncologico,
+              hiv,
+              pneumopatia,
+              puerpera,
+              sindromeDown,
+              terapiaRenal,
+              transplantado
+              
+            } = req.body
 
       /* Caso os campos obrigatorios estiverem em branco... */
       if (!cpf || !nome || !dataNascimento) {
@@ -29,15 +52,36 @@ const register = async (req, res) => {
       
       try {
         const resposta = await axios.post(`${urlApi}/register`, {
-          cpf: cpf,
           nome: nome,
+          cpf: cpf,
           dataNascimento: dataNascimento,
+          idade: idade,
+          sexo: sexo,
           telefone: telefone,
           endereco: endereco,
           nomeMae: nomeMae,
           nomeAplicador: nomeAplicador,
           fabricante: fabricante,
+          lote: lote,
           dose: dose,
+
+          cirrose: cirrose,
+          diabetes: diabetes,
+          doencaNeurologica: doencaNeurologica,
+          doencaRenal: doencaRenal,
+          doencaCardiovascular: doencaCardiovascular,
+          gestante: gestante,
+          hemoglobinopatia: hemoglobinopatia,
+          hipertensao: hipertensao,
+          imunossuprimido: imunossuprimido,
+          obesidadeGrave: obesidadeGrave,
+          pacienteOncologico: pacienteOncologico,
+          hiv: hiv,
+          pneumopatia: pneumopatia,
+          puerpera: puerpera,
+          sindromeDown: sindromeDown,
+          terapiaRenal: terapiaRenal,
+          transplantado: transplantado
         })
 
         return res.status(201).json({

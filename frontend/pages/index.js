@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import {useForm, Controller } from "react-hook-form";
-import { TextField, Checkbox } from "@material-ui/core";
+import { Checkbox } from "@material-ui/core";
 
 
 
@@ -10,7 +10,7 @@ import { TextField, Checkbox } from "@material-ui/core";
 
 export default function Form() {
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
-  const { register, handleSubmit, control, reset, } = useForm();
+  const { register, handleSubmit, control } = useForm();
 
 
   
@@ -46,7 +46,7 @@ export default function Form() {
 
 
        <div>
-         <label>Nome: </label>
+         <label>1) Nome: </label>
          <input name="nome"
            {...register("nome")} required  >
          </input>
@@ -55,7 +55,7 @@ export default function Form() {
 
 
        <div>
-         <label>CPF: </label>
+         <label>2) CPF: </label>
          <input name="cpf"
           {...register("cpf")} required  />
         </div>
@@ -63,7 +63,7 @@ export default function Form() {
 
 
        <div>
-         <label>Data de Nascimento: </label>
+         <label>3) Data de Nascimento: </label>
           <input name="dataNascimento"
             {...register("dataNascimento")} required  />
         </div>
@@ -71,7 +71,28 @@ export default function Form() {
 
 
         <div>
-          <label>Telefone: </label>
+         <label>4) Idade: </label>
+          <input name="idade"
+            {...register("idade")} required  />
+        </div>
+      
+
+
+        <div>
+        <label>5) Sexo: </label>
+         <select name="sexo"
+          {...register("sexo")} required >
+           <option value="Selecionar">Selecionar</option>
+           <option value="feminino">Feminino</option>
+           <option value="masculino">Masculino</option>
+           <option value="outro">Outro</option>
+         </select>
+        </div>
+      
+
+
+        <div>
+          <label>6) Telefone: </label>
           <input name="telefone"
             {...register("telefone")} required  />
         </div>
@@ -79,7 +100,7 @@ export default function Form() {
 
 
         <div>
-          <label>Endereço: </label>
+          <label>7) Endereço: </label>
           <input name="endereco"
             {...register("endereco")} required  />
         </div>
@@ -87,7 +108,7 @@ export default function Form() {
 
 
        <div>
-          <label>Nome da mãe: </label>
+          <label>8) Nome da mãe: </label>
           <input name="nomeMae"
             {...register("nomeMae")} required  />
         </div>
@@ -95,15 +116,16 @@ export default function Form() {
 
 
        <div>
-          <label>Nome do aplicador: </label>
+          <label>9) Nome do aplicador: </label>
           <input name="nomeAplicador"
             {...register("nomeAplicador")} required  />
-        </div>
+       </div>
+      
       
 
 
        <div>
-        <label>Vacina: </label>
+        <label>10) Vacina: </label>
          <select name="fabricante"
           {...register("fabricante")} required >
            <option value="Selecionar">Selecionar</option>
@@ -115,9 +137,17 @@ export default function Form() {
         </div>
       
 
+      
+        <div>
+          <label>11) Lote: </label>
+          <input name="lote"
+            {...register("lote")} required  />
+       </div>
+      
+
 
         <div>
-          <label>Dose </label>
+          <label>12) Dose </label>
           <select name="dose"
             {...register("dose")} required>
             <option value="Selecionar">Selecionar</option>
@@ -129,7 +159,7 @@ export default function Form() {
 
         <div>
           <label>
-            Selecionar os campos em caso positivo:
+            13) Selecionar os campos a seguir em caso positivo:
           </label>
         </div>
 
@@ -140,7 +170,7 @@ export default function Form() {
             name="cirrose"
             control={control}
             defaultValue={false}
-            rules={{ required: true }}
+            rules={{ required: false }}
             render={({ field }) => <Checkbox {...field} />}
           />
         </div>
@@ -152,7 +182,7 @@ export default function Form() {
             name="diabetes"
             control={control}
             defaultValue={false}
-            rules={{ required: true }}
+            rules={{ required: false }}
             render={({ field }) => <Checkbox {...field} />}
           />
         </div>
@@ -164,7 +194,7 @@ export default function Form() {
             name="doencaNeurologica"
             control={control}
             defaultValue={false}
-            rules={{ required: true }}
+            rules={{ required: false }}
             render={({ field }) => <Checkbox {...field} />}
           />
         </div>
@@ -176,7 +206,7 @@ export default function Form() {
             name="doencaRenal"
             control={control}
             defaultValue={false}
-            rules={{ required: true }}
+            rules={{ required: false }}
             render={({ field }) => <Checkbox {...field} />}
           />
         </div>
@@ -188,7 +218,7 @@ export default function Form() {
             name="doencaCardiovascular"
             control={control}
             defaultValue={false}
-            rules={{ required: true }}
+            rules={{ required: false }}
             render={({ field }) => <Checkbox {...field} />}
           />
         </div>
@@ -200,7 +230,7 @@ export default function Form() {
             name="gestante"
             control={control}
             defaultValue={false}
-            rules={{ required: true }}
+            rules={{ required: false }}
             render={({ field }) => <Checkbox {...field} />}
           />
         </div>
@@ -213,7 +243,7 @@ export default function Form() {
             name="hemoglobinopatia"
             control={control}
             defaultValue={false}
-            rules={{ required: true }}
+            rules={{ required: false }}
             render={({ field }) => <Checkbox {...field} />}
           />
         </div>
@@ -222,10 +252,10 @@ export default function Form() {
         <div>
           <label>Hipertensão: </label>
           <Controller
-            name="hipertensão"
+            name="hipertensao"
             control={control}
             defaultValue={false}
-            rules={{ required: true }}
+            rules={{ required: false }}
             render={({ field }) => <Checkbox {...field} />}
           />
         </div>
@@ -237,7 +267,7 @@ export default function Form() {
             name="imunossuprimido"
             control={control}
             defaultValue={false}
-            rules={{ required: true }}
+            rules={{ required: false }}
             render={({ field }) => <Checkbox {...field} />}
           />
         </div>
@@ -249,7 +279,7 @@ export default function Form() {
             name="obesidadeGrave"
             control={control}
             defaultValue={false}
-            rules={{ required: true }}
+            rules={{ required: false }}
             render={({ field }) => <Checkbox {...field} />}
           />
         </div>
@@ -261,7 +291,7 @@ export default function Form() {
             name="pacienteOncologico"
             control={control}
             defaultValue={false}
-            rules={{ required: true }}
+            rules={{ required: false }}
             render={({ field }) => <Checkbox {...field} />}
           />
         </div>
@@ -273,7 +303,7 @@ export default function Form() {
             name="hiv"
             control={control}
             defaultValue={false}
-            rules={{ required: true }}
+            rules={{ required: false }}
             render={({ field }) => <Checkbox {...field} />}
           />
         </div>
@@ -285,7 +315,7 @@ export default function Form() {
             name="pneumopatia"
             control={control}
             defaultValue={false}
-            rules={{ required: true }}
+            rules={{ required: false }}
             render={({ field }) => <Checkbox {...field} />}
           />
         </div>
@@ -297,7 +327,7 @@ export default function Form() {
             name="puerpera"
             control={control}
             defaultValue={false}
-            rules={{ required: true }}
+            rules={{ required: false }}
             render={({ field }) => <Checkbox {...field} />}
           />
         </div>
@@ -309,7 +339,7 @@ export default function Form() {
             name="sindromeDown"
             control={control}
             defaultValue={false}
-            rules={{ required: true }}
+            rules={{ required: false }}
             render={({ field }) => <Checkbox {...field} />}
           />
         </div>
@@ -321,7 +351,7 @@ export default function Form() {
             name="terapiaRenal"
             control={control}
             defaultValue={false}
-            rules={{ required: true }}
+            rules={{ required: false }}
             render={({ field }) => <Checkbox {...field} />}
           />
         </div>
@@ -333,7 +363,7 @@ export default function Form() {
             name="transplantado"
             control={control}
             defaultValue={false}
-            rules={{ required: true }}
+            rules={{ required: false }}
             render={({ field }) => <Checkbox {...field} />}
           />
         </div>
