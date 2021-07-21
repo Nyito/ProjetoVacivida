@@ -3,9 +3,7 @@ from db import db
 
 class VacinaModel(db.Model):
     __tablename__ = "vacinacao"
-
     id = db.Column(db.Integer, primary_key=True)
-
     nome = db.Column(db.String(100), nullable=True)
     cpf = db.Column(db.String(100), nullable=True, unique=True)
     dataNascimento = db.Column(db.String(100), nullable=True)
@@ -18,7 +16,6 @@ class VacinaModel(db.Model):
     fabricante = db.Column(db.String(100), nullable=True)
     lote = db.Column(db.String(100), nullable=True)
     dose = db.Column(db.String(100), nullable=True)
-
     cirrose = db.Column(db.Boolean, nullable=True)
     diabetes = db.Column(db.Boolean, nullable=True)
     doencaNeurologica = db.Column(db.Boolean, nullable=True)
