@@ -9,8 +9,10 @@ from flask_jwt_extended import (
     jwt_required,
 )
 import bcrypt
-from models.vacina import VacinaModel
-from schemas.vacina import VacinaSchema
+from models.vacina import VacinaModel1
+from models.vacina import VacinaModel2
+from schemas.vacina import VacinaSchema1
+from schemas.vacina import VacinaSchema2
 
 # Para o VacinaFileResgister
 import boto3
@@ -28,13 +30,13 @@ CREATED_SUCCESSFULLY = "Vacinação cadastrada com sucesso!"
 
 USER_NOT_FOUND = "Usuário não encontrado."
 USER_DELETED = "Usuário removido."
-INVALID_CREDENTIALS = "Credenciais inválidas."
+INVALID_CPF = "CPF já cadastrado."
 # USER_LOGGED_OUT = "Usuário <id={user_id}> deslogado com sucesso."
 
-vacina_schema = VacinaSchema()
+vacina_schema1 = VacinaSchema1()
+vacina_schema2 = VacinaSchema2()
 
-
-class VacinaRegister(Resource):
+class VacinaRegister1(Resource):
     @classmethod
     def post(cls):
         
@@ -43,18 +45,40 @@ class VacinaRegister(Resource):
 
             print(vacina_json)
 
-
-            vacina = vacina_schema.load(vacina_json)
-
+            vacina = vacina_schema1.load(vacina_json)
 
             vacina.save_to_db()
 
-            v = VacinaModel.find_by_cpf("46726345828")
-            print(v.id)
+            #v = VacinaModel1.find_by_cpf("46726345828")
+            #print(v.id)
             
         except Exception as error:
             print(error)
+            return {"message": INVALID_CPF}, 400
         return {"message": CREATED_SUCCESSFULLY}, 201
+
+
+class VacinaRegister2(Resource):
+    @classmethod
+    def post(cls):
+        
+        try:
+            vacina_json = request.get_json()
+
+            print(vacina_json)
+
+            vacina = vacina_schema2.load(vacina_json)
+
+            vacina.save_to_db()
+
+            #v = VacinaModel2.find_by_cpf("46726345828")
+            #print(v.id)
+            
+        except Exception as error:
+            print(error)
+            return {"message": INVALID_CPF}, 400
+        return {"message": CREATED_SUCCESSFULLY}, 201
+
 
 class VacinaFileRegister(Resource):
     @classmethod

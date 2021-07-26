@@ -7,7 +7,8 @@ import os
 from db import db
 from schema import ma
 from dotenv import load_dotenv
-from resources.vacina import VacinaRegister
+from resources.vacina import VacinaRegister1
+from resources.vacina import VacinaRegister2
 from resources.vacina import VacinaFileRegister
 
 app = Flask(__name__)
@@ -37,7 +38,8 @@ def handle_marshmallow_validation(err):
 jwt = JWTManager(app)
 
 # Endpoints da aplicação
-api.add_resource(VacinaRegister, "/register")
+api.add_resource(VacinaRegister1, "/register1")
+api.add_resource(VacinaRegister2, "/register2")
 api.add_resource(VacinaFileRegister, "/uploadFile")
 
 if __name__ == "__main__":

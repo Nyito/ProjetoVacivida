@@ -10,9 +10,14 @@ import {useForm} from "react-hook-form"
 export default function index() {
   return (
     <Layout home>
+
+        <h1>
+            Formulário enviado com sucesso!
+        </h1>
+
+
       <section className={utilStyles.headingMd}>
-        <h1><Link href='/uploadFile'><a>Fazer Upload</a></Link></h1>
-        <h2><Link href='/escolhadose'><a>Preencher Formulário</a></Link></h2>
+        <h2><Link href='/'><a>Voltar para a página inicial</a></Link></h2>
       </section>
     </Layout>
   );

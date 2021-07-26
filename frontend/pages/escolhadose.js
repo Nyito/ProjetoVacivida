@@ -11,8 +11,8 @@ export default function index() {
   return (
     <Layout home>
       <section className={utilStyles.headingMd}>
-        <h1><Link href='/uploadFile'><a>Fazer Upload</a></Link></h1>
-        <h2><Link href='/escolhadose'><a>Preencher Formulário</a></Link></h2>
+        <h1><Link href='/dose1'><a>Primeira Dose</a></Link></h1>
+        <h2><Link href='/dose2'><a>Segunda Dose</a></Link></h2>
       </section>
     </Layout>
   );

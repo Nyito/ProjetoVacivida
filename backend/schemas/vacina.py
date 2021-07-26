@@ -1,9 +1,15 @@
 from schema import ma
-from models.vacina import VacinaModel
+from models.vacina import VacinaModel1
+from models.vacina import VacinaModel2
 
-
-class VacinaSchema(ma.SQLAlchemyAutoSchema):
+class VacinaSchema1(ma.SQLAlchemyAutoSchema):
     class Meta:
-        model = VacinaModel
+        model = VacinaModel1
+        dump_only = ("id",)
+        load_instance = True
+
+class VacinaSchema2(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = VacinaModel2
         dump_only = ("id",)
         load_instance = True
