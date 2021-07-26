@@ -15,7 +15,7 @@ from schemas.vacina import VacinaSchema1
 from schemas.vacina import VacinaSchema2
 
 # Para o VacinaFileResgister
-import boto3
+#import boto3
 import os
 UPLOAD_FOLDER = './uploaded_files'
 app = Flask(__name__)
