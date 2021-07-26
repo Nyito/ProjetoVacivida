@@ -3,6 +3,8 @@ import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import {useForm, Controller } from "react-hook-form";
 import { Checkbox } from "@material-ui/core";
+import Router from 'next/router'
+
 
 
 
@@ -30,6 +32,7 @@ export default function form() {
     let result = await registerApi.json()
     if (result.success) {
       console.log('formulario enviado')
+      Router.push('/') //redireciona para a tela inicial
     } else {
       console.log('erro ao enviar formulario')
     }
