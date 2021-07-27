@@ -49,7 +49,7 @@ export default function form() {
     <Layout home>
 
       <h1 className={utilStyles.headingLg}>
-          Formuçário Vacivida 1ª Dose
+          1ª Dose
       </h1>
 
    <form onSubmit={handleSubmit(onSubmit)}>

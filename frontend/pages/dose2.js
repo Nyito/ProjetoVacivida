@@ -48,7 +48,7 @@ export default function form() {
 
     
     <h1 className={utilStyles.headingLg}>
-      Formuçário Vacivida 2ª Dose
+      2ª Dose
     </h1>
 
 

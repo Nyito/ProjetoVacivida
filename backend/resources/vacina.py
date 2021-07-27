@@ -16,9 +16,9 @@ from schemas.vacina import VacinaSchema2
 
 # Para o VacinaFileResgister
 import os
-from PIL import Image
-import pytesseract
-import cv2
+#from PIL import Image
+#import pytesseract
+#import cv2
 
 
 # Mensagens pré-definidas
@@ -87,7 +87,7 @@ class VacinaFileRegister(Resource):
             print("chamou api\n")
             arq = request.files['file']
             print(arq.filename)
-            pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files (x86)\\Tesseract-OCR\\tesseract.exe'
+            #pytesseract.pytesseract.tesseract_cmd = 'Tesseract-OCR\\tesseract.exe'
             
             path = os.path.join(arq.filename)#app.config['UPLOAD_FOLDER'], arq.filename)
             arq.save(path)
@@ -95,8 +95,11 @@ class VacinaFileRegister(Resource):
             #img = cv2.imread('/upload_files/teste.png')
             image = Image.open(arq.filename)
             
-            text = pytesseract.image_to_string(image, lang='por')
-            print(text)
+            #text = pytesseract.image_to_string(image, lang='por')
+            #print(text)
+
+
+
             os.remove(arq.filename)
 
 
