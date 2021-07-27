@@ -15,11 +15,10 @@ from schemas.vacina import VacinaSchema1
 from schemas.vacina import VacinaSchema2
 
 # Para o VacinaFileResgister
-#import boto3
 import os
-UPLOAD_FOLDER = './uploaded_files'
-app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+from PIL import Image
+import pytesseract
+import cv2
 
 
 # Mensagens pré-definidas
@@ -83,17 +82,26 @@ class VacinaRegister2(Resource):
 class VacinaFileRegister(Resource):
     @classmethod
     def post(cls):
-        #client = boto3.client('textract')
+
         try:
             print("chamou api\n")
             arq = request.files['file']
             print(arq.filename)
+            pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files (x86)\\Tesseract-OCR\\tesseract.exe'
+            
+            path = os.path.join(arq.filename)#app.config['UPLOAD_FOLDER'], arq.filename)
+            arq.save(path)
 
-            path = os.path.join(app.config['UPLOAD_FOLDER'], arq.filename)
-            #arq.save(path)
+            #img = cv2.imread('/upload_files/teste.png')
+            image = Image.open(arq.filename)
+            
+            text = pytesseract.image_to_string(image, lang='por')
+            print(text)
+            os.remove(arq.filename)
 
 
             
         except Exception as error:
             print(error)
+            return {"message": "Falha no envio"}, 400
         return {"message": CREATED_SUCCESSFULLY}, 201

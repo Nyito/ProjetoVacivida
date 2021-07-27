@@ -16,6 +16,8 @@ flask-cors = "*"
 python-dotenv = "*"
 psycopg2-binary = "*"
 colorama = "*"
+pytesseract = "*"
+opencv-pthon = "*"
 
 [dev-packages]
 black = "*"
