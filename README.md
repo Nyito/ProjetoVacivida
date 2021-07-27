@@ -16,7 +16,9 @@ https://projeto-vacivida.vercel.app
 
 **Requisitos:**
   Ter uma conta no git
+  
   Ter instalado:
+  
     git (https://www.atlassian.com/git/tutorials/install-git#windows)
     
     python(https://www.python.org/downloads/)
@@ -30,6 +32,7 @@ https://projeto-vacivida.vercel.app
   
 **Obtendo o código:**
 No prompt de comando
+
   git clone https://github.com/Nyito/ProjetoVacivida
   
 **Rodar o backend:**
@@ -49,6 +52,7 @@ No prompt de comando
   cd ProjetoVaciVida 
   
   cd frontend
+  
   npm install
   
   npm run dev
