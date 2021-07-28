@@ -1,10 +1,15 @@
 # ProjetoVacivida
 
 By
+
 Daniel Hiroki Yamashita
+
 Eduardo Thomaz Noronha
+
 José Vitor Martins Makiyama
+
 Leonardo Ihara Ishicava
+
 Nicholas Yassuo Ito
 
 
@@ -17,9 +22,13 @@ https://projeto-vacivida.vercel.app
 Ao enviar o formulário, os dados são armazenados no banco de dados hospedado na plataforma Okteto.
 Para verificar o conteúdo do banco de dados, pode-se utilizar um aplicativo como o DBeaver, criando uma database com:
 
+
 Database: okteto
-Uername: okteto
+
+Username: okteto
+
 Password: okteto
+
 
 e fazer o port-foward pela seguinte linha de comando:
 
