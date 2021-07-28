@@ -25,9 +25,13 @@ https://projeto-vacivida.vercel.app
     
     pipenv(https://www.pythontutorial.net/python-basics/install-pipenv-windows/)
     
+    pyextract e Pillow(https://pypi.org/project/pytesseract/)  
+    
     node.js( https://nodejs.org/en/download/current/)
     
     npm (https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/)
+    
+    
     
   
 **Obtendo o código:**
