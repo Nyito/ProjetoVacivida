@@ -40,6 +40,10 @@ Importante notar, que é necessário configurar as variaveis de ambiente com o c
   
 após baixar o arquivo de configuração do Okteto e salvar no path acima.
 
+
+
+**Para acessar o formulário e banco de dados pelo localhost:**
+
 **Requisitos:**
   Ter uma conta no git
   
