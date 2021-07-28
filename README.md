@@ -2,17 +2,34 @@
 
 By
 Daniel Hiroki Yamashita
-
 Eduardo Thomaz Noronha
-
 José Vitor Martins Makiyama
-
 Leonardo Ihara Ishicava
-
 Nicholas Yassuo Ito
+
+
+
+**Para acessar o formulário pela internet:**
 
 **Link Formulário:**
 https://projeto-vacivida.vercel.app
+
+Ao enviar o formulário, os dados são armazenados no banco de dados hospedado na plataforma Okteto.
+Para verificar o conteúdo do banco de dados, pode-se utilizar um aplicativo como o DBeaver, criando uma database com:
+
+Database: okteto
+Uername: okteto
+Password: okteto
+
+e fazer o port-foward pela seguinte linha de comando:
+
+  kubectl port-forward --namespace leoishicava svc/postgresql 5432:5432
+
+Importante notar, que é necessário configurar as variaveis de ambiente com o comando
+
+  $Env:KUBECONFIG=("$HOME\Downloads\okteto-kube.config;$Env:KUBECONFIG;$HOME\.kube\config")
+  
+após baixar o arquivo de configuração do Okteto e salvar no path acima.
 
 **Requisitos:**
   Ter uma conta no git
