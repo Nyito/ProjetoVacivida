@@ -36,26 +36,28 @@ No prompt de comando
   git clone https://github.com/Nyito/ProjetoVacivida
   
 **Rodar o backend:**
-  cd ProjetoVacivida
+    
+    cd ProjetoVacivida
   
-  cd backend
+    cd backend
   
-  pipenv shell
+    pipenv shell
   
-  pipenv install
+    pipenv install
   
-  python app.py
+    python app.py
  
  Assim o backend estará rodando
  
 **Rodar o frontend:**
-  cd ProjetoVaciVida 
+      
+    cd ProjetoVaciVida 
   
-  cd frontend
+    cd frontend
   
-  npm install
+    npm install
   
-  npm run dev
+    npm run dev
   
   O frontend estará rodando no http://localhost:3000
 
