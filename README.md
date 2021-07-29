@@ -63,8 +63,12 @@ Após baixar o arquivo de configuração do Okteto e salvar na pasta de Download
     
     npm (https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/)
     
-    
-    
+ 
+OBS.: talvez seja necessário baixar o tesseract.exe no computador, e mudar o PATH da linha 92 do arquivo em "\ProjetoVacivida\backend\resources\vacina.py"
+para o local onde o tesseract.exe está salvo. No nosso caso ele se encontra em "C:\\Program Files\\Tesseract-OCR\\tesseract.exe", mas isso pode mudar.
+
+    https://github.com/UB-Mannheim/tesseract/wiki
+
   
 **Obtendo o código:**
 No prompt de comando
