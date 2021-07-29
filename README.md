@@ -32,13 +32,16 @@ Password: okteto
 
 e fazer o port-foward pela seguinte linha de comando:
 
-  kubectl port-forward --namespace leoishicava svc/postgresql 5432:5432
+    kubectl port-forward --namespace leoishicava svc/postgresql 5432:5432
 
 Importante notar, que é necessário configurar as variaveis de ambiente com o comando
 
-  $Env:KUBECONFIG=("$HOME\Downloads\okteto-kube.config;$Env:KUBECONFIG;$HOME\.kube\config")
+    $Env:KUBECONFIG=("$HOME\Downloads\okteto-kube.config;$Env:KUBECONFIG;$HOME\.kube\config")
   
 após baixar o arquivo de configuração do Okteto e salvar no path acima.
+
+
+
 
 
 
@@ -69,6 +72,28 @@ No prompt de comando
 
   git clone https://github.com/Nyito/ProjetoVacivida
   
+  
+ Para rodar no localhost, é importante mudar as variáveis de ambiente (arquivo .env) dentro do frontend e backend para:
+ 
+ **.end do frontend:**
+
+    NEXT_PUBLIC_BASE_URL=http://localhost:3000
+    #URL_API_BACKEND=https://vacivida-leoishicava.cloud.okteto.net
+    URL_API_BACKEND=http://0.0.0.0:5000
+    JWT_KEY=segredo
+
+
+**.env do backend:**
+  
+    JWT_SECRET_KEY=segredo
+    #SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://okteto:okteto@postgresql.leoishicava.svc.cluster.local/okteto?client_encoding=utf8
+    SQLALCHEMY_DATABASE_URI=sqlite:///data.db
+    
+    
+Dessa maneira, ao enviar o formulário ou um arquivo de imagem, os dados serão salvos no arquivo "data.db" dentro da pasta do backend. 
+ 
+  
+  
 **Rodar o backend:**
     
     cd ProjetoVacivida
@@ -94,9 +119,21 @@ No prompt de comando
     npm run dev
   
   O frontend estará rodando no http://localhost:3000
+  
+ 
+ O frontend e o backend devem estar rodando simultaneamente em terminais separados.
+ 
+ 
+Para vizualizar os seus dados, pode-se utilizar um aplicativo, ou o site listado abaixo, arrastando o arquivo "data.db" para dentro do site.
 
-
-
+    https://inloop.github.io/sqlite-viewer/
+  
+  
+  
+  
+  
+  
+  
   
   
  
