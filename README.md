@@ -34,11 +34,10 @@ e fazer o port-foward pela seguinte linha de comando:
 
     kubectl port-forward --namespace leoishicava svc/postgresql 5432:5432
 
-Importante notar, que é necessário configurar as variaveis de ambiente com o comando
+Após baixar o arquivo de configuração do Okteto e salvar na pasta de Downloads, é necessário configurar as variáveis de ambiente com o comando:
 
     $Env:KUBECONFIG=("$HOME\Downloads\okteto-kube.config;$Env:KUBECONFIG;$HOME\.kube\config")
   
-após baixar o arquivo de configuração do Okteto e salvar no path acima.
 
 
 
@@ -75,7 +74,7 @@ No prompt de comando
   
  Para rodar no localhost, é importante mudar as variáveis de ambiente (arquivo .env) dentro do frontend e backend para:
  
- **.end do frontend:**
+ **.env do frontend:**
 
     NEXT_PUBLIC_BASE_URL=http://localhost:3000
     #URL_API_BACKEND=https://vacivida-leoishicava.cloud.okteto.net
@@ -124,7 +123,7 @@ Dessa maneira, ao enviar o formulário ou um arquivo de imagem, os dados serão 
  O frontend e o backend devem estar rodando simultaneamente em terminais separados.
  
  
-Para vizualizar os seus dados, pode-se utilizar um aplicativo, ou o site listado abaixo, arrastando o arquivo "data.db" para dentro do site.
+Para vizualizar os seus dados após o envio dos dados, pode-se utilizar um aplicativo, ou o site listado abaixo, arrastando o arquivo "data.db" para dentro do site.
 
     https://inloop.github.io/sqlite-viewer/
   
