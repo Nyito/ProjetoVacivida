@@ -132,7 +132,8 @@ Para vizualizar os seus dados após o envio dos dados, pode-se utilizar um aplic
     https://inloop.github.io/sqlite-viewer/
   
   
-  
+ Para testar o formulário, basta preencher com os dados necessários
+ Para testar o OCR no localhost, a imagem usada nos testes foi anexada com os outros envios.
   
   
   
