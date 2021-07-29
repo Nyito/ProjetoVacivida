@@ -57,7 +57,7 @@ Após baixar o arquivo de configuração do Okteto e salvar na pasta de Download
     
     pipenv(https://www.pythontutorial.net/python-basics/install-pipenv-windows/)
     
-    pyextract e Pillow(https://pypi.org/project/pytesseract/)  
+    pytesseract e Pillow(https://pypi.org/project/pytesseract/)  
     
     node.js( https://nodejs.org/en/download/current/)
     
