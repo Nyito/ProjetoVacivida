@@ -26,6 +26,9 @@ export default function uploadFile() {
         'Content-Type': 'multipart/form-data'
         }
     })
+
+    Router.push('/enviado') //redireciona para a tela de envio
+
   };
 
   return (

@@ -16,8 +16,8 @@ from schemas.vacina import VacinaSchema2
 
 # Para o VacinaFileResgister
 import os
-#from PIL import Image
-#import pytesseract
+from PIL import Image
+import pytesseract
 #import cv2
 
 import json
@@ -89,7 +89,7 @@ class VacinaFileRegister(Resource):
             print("chamou api\n")
             arq = request.files['file']
             print(arq.filename)
-            #pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+            pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
             
             path = os.path.join(arq.filename)#app.config['UPLOAD_FOLDER'], arq.filename)
             arq.save(path)
@@ -97,64 +97,64 @@ class VacinaFileRegister(Resource):
             #img = cv2.imread('/upload_files/teste.png')
             image = Image.open(arq.filename)
             
-            #text = pytesseract.image_to_string(image, lang='por')
+            text = pytesseract.image_to_string(image, lang='por')
             print(text)
 
-            # lines = text.split('\n')
+            lines = text.split('\n')
 
 
-            # while('' in lines):
-            #     lines.remove('')
+            while('' in lines):
+                lines.remove('')
 
 
-            # nome = lines[2]
-            # cpf = lines[4]
-            # telefone = lines[6]
-            # nomeMae = lines[8]
-            # endereco = lines[10]
+            nome = lines[2]
+            cpf = lines[4]
+            telefone = lines[6]
+            nomeMae = lines[8]
+            endereco = lines[10]
 
 
-            # default = False
-            # defaultString = "teste"
+            default = False
+            defaultString = "teste"
 
-            # dicionario = {  'nome':nome, 
-            #                 "cpf":cpf, 
-            #                 "dataNascimento":defaultString, 
-            #                 "idade":defaultString,  
-            #                 "sexo":defaultString, 
-            #                 "telefone":telefone, 
-            #                 "endereco":endereco, 
-            #                 "nomeMae":nomeMae, 
-            #                 "nomeAplicador":defaultString, 
-            #                 "fabricante":defaultString, 
-            #                 "lote":defaultString,
+            dicionario = {  'nome':nome, 
+                            "cpf":cpf, 
+                            "dataNascimento":defaultString, 
+                            "idade":defaultString,  
+                            "sexo":defaultString, 
+                            "telefone":telefone, 
+                            "endereco":endereco, 
+                            "nomeMae":nomeMae, 
+                            "nomeAplicador":defaultString, 
+                            "fabricante":defaultString, 
+                            "lote":defaultString,
                        
-            #                 "cirrose":default,
-            #                 "diabetes":default,
-            #                 "doencaNeurologica":default,
-            #                 "doencaRenal":default,
-            #                 "doencaCardiovascular":default,
-            #                 "gestante":default,
-            #                 "hemoglobinopatia":default,
-            #                 "hipertensao":default,
-            #                 "imunossuprimido":default,
-            #                 "obesidadeGrave":default,
-            #                 "pacienteOncologico":default,
-            #                 "hiv":default,
-            #                 "pneumopatia":default,
-            #                 "puerpera":default,
-            #                 "sindromeDown":default,
-            #                 "terapiaRenal":default,
-            #                 "transplantado":default}
+                            "cirrose":default,
+                            "diabetes":default,
+                            "doencaNeurologica":default,
+                            "doencaRenal":default,
+                            "doencaCardiovascular":default,
+                            "gestante":default,
+                            "hemoglobinopatia":default,
+                            "hipertensao":default,
+                            "imunossuprimido":default,
+                            "obesidadeGrave":default,
+                            "pacienteOncologico":default,
+                            "hiv":default,
+                            "pneumopatia":default,
+                            "puerpera":default,
+                            "sindromeDown":default,
+                            "terapiaRenal":default,
+                            "transplantado":default}
 
 
-            # dicionario_json = json.dumps(dicionario)
+            dicionario_json = json.dumps(dicionario)
 
-            # print(dicionario_json)
+            print(dicionario_json)
 
-            # vacina = vacina_schema1.load(json.loads(dicionario_json))
+            vacina = vacina_schema1.load(json.loads(dicionario_json))
 
-            # vacina.save_to_db()
+            vacina.save_to_db()
 
             os.remove(arq.filename)
 
